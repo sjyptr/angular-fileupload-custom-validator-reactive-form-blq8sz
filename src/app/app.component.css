@@ -1,0 +1,8 @@
+p {
+  font-family: Lato;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 12px;
+}

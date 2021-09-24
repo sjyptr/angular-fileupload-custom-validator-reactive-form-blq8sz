@@ -1,0 +1,19 @@
+<form [formGroup]="form" enctype="multipart/form-data">
+  <input
+    multiple="multiple"
+    formControlName="photo"
+    type="file"
+    (change)="handleFileInput($event)"
+  />
+
+  <div
+    *ngIf="
+      (submitted && form.controls['photo'].errors) ||
+      (form.controls['photo'].errors?.extensionFile &&
+        form.controls['photo'].touched)
+    "
+    class="invalid-feedback"
+  >
+    File doesn't have a valid format.
+  </div>
+</form>
